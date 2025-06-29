@@ -1,0 +1,454 @@
+/* ==================== GLOBAL VARIABLES ==================== */
+:root {
+  --primary: #3F51B5;       /* Indigo */
+  --secondary: #C5CAE9;
+  --accent:  #3F51B5;
+  --text: #263238;
+  --background: #ECEFF1;
+  --skyblue: rgba(135, 206, 235, 0.25);
+}
+
+/* ==================== SHARED CONTAINER ==================== */
+/* Used in Home, Login, Register */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--background);
+  padding: 1rem;
+}
+
+/* ==================== SHARED CONTENT BOX ==================== */
+/* Used in Home, Login, Register */
+.home-content {
+  background: var(--skyblue);
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* ==================== SHARED FLEX LAYOUT ==================== */
+/* Used to split form and image in Home/Login/Register */
+.home-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ==================== IMAGE SECTION ==================== */
+/* Used on right side of Home, Login, Register */
+/* Parent container for image */
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+/* Image styles - make it bigger */
+.home-image img {
+  width: 100%;
+  max-width: 500px; /* increase this as needed */
+  height: auto;
+  object-fit: contain;
+  background-color: transparent;
+}
+
+/* ==================== TEXT SECTION ==================== */
+/* Used in Home, Login, Register */
+.home-text {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ==================== HOME / LOGIN / REGISTER Heading ==================== */
+.home-title {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  align-self: flex-start;
+  text-align: center;
+  width: 100%;
+}
+
+/* ==================== HOME PAGE ONLY ==================== */
+.home-subtitle {
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.home-quote {
+  font-size: 1rem;
+  color: #546E7A;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+/* ==================== BUTTON GROUP (HOME PAGE) ==================== */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* ==================== REUSABLE BUTTON STYLES ==================== */
+/* Used in Home, Login, Register */
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: white;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn:active {
+  border-color: #1a237e;
+}
+
+/* For alternate styling like 'Register' on Home */
+.btn-secondary {
+  background-color: var(--accent);
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.btn-secondary:active {
+  border-color: #1a237e;
+}
+
+/* ==================== LOGIN & REGISTER FORM ==================== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 450px;
+}
+
+.login-form input,
+.login-form select {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* ==================== FORM BOTTOM TEXT ==================== */
+/* Used in Login & Register for "switch" links */
+.switch-link {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+/* ==================== USER HOME PAGE ==================== */
+
+/* Top Navigation Bar */
+/* =========== TOPBAR STYLE =========== */
+.topbar {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem;     /* smaller padding */
+  height: 50px;               /* reduce height here */
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.2rem;          /* smaller font */
+  font-weight: bold;
+  color: white;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #cfd8dc;
+}
+
+
+/* Header Section below topbar */
+.header {
+  background-color: var(--secondary);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+/* Badge/Notification Icon */
+.notify {
+  cursor: pointer;
+}
+
+/* Page Body Section */
+.body {
+  padding: 2rem;
+}
+
+/* Doctor Cards (optional, reusable) */
+.doctor-card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: scale(1.02);
+}
+/* ==================== USER HOME WELCOME BOX ==================== */
+/* ==================== USER HOME WELCOME SECTION ==================== */
+.welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+/* Text box with skyblue background */
+.welcome-box {
+  background-color: var(--skyblue);
+  padding: 4rem;
+  border-radius: 15px;
+  flex: 1;
+  min-width: 400px;
+  text-align: center;
+}
+
+/* Right side image */
+.welcome-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.welcome-image img {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+/* ============ USER APPOINTMENTS TABLE ============ */
+
+.center-appointments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.user-appointments-table {
+  width: 100%;
+  max-width: 700px;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  border: 2px solid #1a237e; /* Dark Blue Border */
+  background-color: white;
+}
+
+.user-appointments-table th,
+.user-appointments-table td {
+  border: 2px solid #1a237e;
+  padding: 12px;
+  text-align: center;
+  color: #263238;
+}
+
+.user-appointments-table th {
+  background-color: #3F51B5;
+  color: white;
+  font-weight: bold;
+}
+/* ================= APPLY DOCTOR ================= */
+.apply-doctor-container {
+  background-color: rgba(135, 206, 250, 0.2); /* Sky blue with transparency */
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 30px auto;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.apply-doctor-title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Form Layout Enhancements */
+.apply-doctor-form {
+  background-color: rgba(135, 206, 235, 0.15); /* Light skyblue transparent */
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Label Styling */
+.apply-doctor-form .ant-form-item-label > label {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Input and Select Styling */
+.apply-doctor-form input,
+.apply-doctor-form .ant-picker {
+  border-radius: 8px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.apply-doctor-form input:focus,
+.apply-doctor-form .ant-picker-focused {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+}
+
+/* Submit Button */
+.apply-doctor-form .btn-submit {
+  display: block;
+  margin: 20px auto 0 auto; /* Center the button */
+  padding: 8px 24px;
+  font-weight: bold;
+}
+
+.apply-doctor-form .btn-primary:hover {
+  background-color: #303f9f; /* Darker indigo */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .apply-doctor-form {
+    padding: 1rem;
+  }
+}
+
+.topbar {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  height: 50px;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #cfd8dc;
+}
+/* Container for grid layout */
+.doctor-grid-container {
+  padding: 1rem;
+}
+
+/* Grid wrapper for doctor cards */
+.doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px; /* ⬅️ minimal gap */
+  justify-items: left;
+  padding: 0; /* remove extra padding */
+  margin: 0;  /* remove margin if any */
+}
+
+
+/* Individual doctor card */
+.doctor-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Doctor name */
+.doctor-card h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Doctor details */
+.doctor-card p {
+  margin: 4px 0;
+}
+
+/* Button inside card */
+.doctor-card button {
+  width: 100%;
+  margin-top: 10px;
+}
